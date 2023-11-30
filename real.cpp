@@ -11,7 +11,7 @@ public:
   }
 
   virtual void vf() {
-    std::cout << "mello" << std::endl;
+    std::cout << "virtual function" << std::endl;
   }
 };
 
@@ -21,16 +21,16 @@ private:
 public:
   B() : cl_name{"B"} {}
   
-  void vf()  {
-    std::cout << "hello" << std::endl;
+  void vf()  override{
+    std::cout << "override virtual function" << std::endl;
   }
 
   virtual void nf() {
-    std::cout << "chmello" << std::endl;
+    std::cout << "B virtual function" << std::endl;
   }
 
 };
-class C : public A{
+class C : public B{
 private:
  int s;
 public:
